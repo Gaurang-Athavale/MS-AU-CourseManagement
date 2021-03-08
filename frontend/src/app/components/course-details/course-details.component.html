@@ -1,0 +1,106 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Course Management</span>
+    
+    <span class="example-spacer"></span>
+    <button mat-raised-button style="margin-right: 2%;" routerLinkActive="active item" [routerLinkActiveOptions]="{exact : true}" routerLink="/addCourse">Add Course</button>
+    <button mat-raised-button style="margin-right: 2%;" routerLinkActive="active item" [routerLinkActiveOptions]="{exact : true}" routerLink="/editCourse">Edit Course</button>
+    <button mat-raised-button style="margin-right: 2%;" routerLinkActive="active item" [routerLinkActiveOptions]="{exact : true}" routerLink="/viewCourse">View Course</button>
+    <button mat-icon-button (click) = "signOut();" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>
+
+<!-- {{viewCourse | json}} -->
+
+
+<mat-card class = "card">
+    <h1>
+    <div class = "example-card">
+        <span class="material-icons">menu_book</span>  
+        {{viewCourse.courseName}}
+    </div>
+    </h1>   
+    <div>
+        Created On: {{viewCourse.createdOn}}
+    </div>
+    <div>
+        Created By: {{viewCourse.createdOn}}
+    </div>
+</mat-card>
+
+<mat-card class = "card">
+    <h1>
+        <div class = "example-card">
+            <span class="material-icons">
+                local_offer
+            </span> Description
+        </div> 
+    </h1>
+    <div>
+        {{viewCourse.courseDescription}}
+    </div>
+</mat-card>
+
+
+<mat-card class = "card">
+    <h1>
+        <div class = "example-card">
+            <span class="material-icons">
+                format_list_bulleted
+            </span> Skills Acquired After the Course Completion
+        </div>
+    </h1>
+
+    <div>
+        <ul>
+            <li *ngFor="let s of skill; let i = index">
+              {{i+1}}. {{s.skillName}}
+            </li>
+          </ul>
+    </div>
+</mat-card>
+
+<mat-card class="card">
+    <h1>
+        <div class = "example-card">
+            <span class="material-icons">
+                get_app
+            </span> Download Training Material:
+            <button mat-raised-button (click) = "downloadFile(trainingMaterial[0].fileData, trainingMaterial[0].fileType)" color="primary"><span class="material-icons">get_app</span> Download</button>
+        </div>
+    </h1>
+</mat-card>
+    
+
+<mat-card class="card">
+    <h1>
+        <div class = "example-card">
+            <span class="material-icons">
+                feedback
+            </span> Feedbacks <span class="tab"></span>  Give a feedback: 
+        <!-- <mat-form-field class="example-full-width"> -->
+            <!-- <mat-label>Give a feedback</mat-label> -->
+            <input type="text" placeholder="Give a feedback" name="feedbackText" [(ngModel)] = "newFeedback.feedbackText">
+            
+        <!-- </mat-form-field> -->
+        <span class = "space"></span>
+        <button (click)="onAddFeedBack()" mat-raised-button color = "primary">Submit</button> 
+        </div>
+    </h1>
+
+    <div>
+        <ul>
+            <li *ngFor="let f of feedback; let i = index">
+
+              <strong>{{i+1}}. {{f.participantName}}</strong><br>
+              {{f.feedbackText}}<br>
+              Posted On: {{f.createdOn | date: 'dd-MM-yyyy'}}<br><br>
+              
+            </li>
+            
+          </ul>
+    </div>
+</mat-card>
