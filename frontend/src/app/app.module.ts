@@ -27,6 +27,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { CourseDetailsComponent } from './components/course-details/course-details.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
+import { UploadPopUpComponent } from './components/upload-pop-up/upload-pop-up.component';
+
 
 
 
@@ -42,7 +44,8 @@ import {MatInputModule} from '@angular/material/input';
     ViewCourseComponent,
     EditCourseComponent,
     EditPopUpComponent,
-    CourseDetailsComponent
+    CourseDetailsComponent,
+    UploadPopUpComponent
   ],
   imports: [
     BrowserModule,

@@ -122,5 +122,6 @@ export class CourseComponent implements OnInit {
     // const uploadFileData = new FormData();
     // uploadFileData.append('file', this.files, this.files.name);
   }
+  
 
 }

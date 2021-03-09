@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Course } from 'src/app/Models/Course';
 import { Feedback } from 'src/app/Models/Feedback';
 import { Skill } from 'src/app/Models/Skill';
 import { TrainingMaterial } from 'src/app/Models/TrainingMaterial';
+import { User } from 'src/app/Models/User';
 import { CourseService } from 'src/app/services/course.service';
 import { LoginService } from 'src/app/services/login.service';
+import { UploadPopUpComponent } from '../upload-pop-up/upload-pop-up.component';
 
 @Component({
   selector: 'app-course-details',
@@ -19,11 +22,16 @@ export class CourseDetailsComponent implements OnInit {
   feedback: Feedback[];
   newFeedback: Feedback = new Feedback();
   trainingMaterial: TrainingMaterial;
+  allPreviousVersions: TrainingMaterial[];
+  panelOpenState = false;
+  flag = 0;
+  loggedUser: User;
 
-  constructor(private router: Router, private courseService: CourseService, private loginService: LoginService) { }
+  constructor(private router: Router, private courseService: CourseService, public dialog: MatDialog, private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.viewCourse = this.courseService.getViewCourse();
+    this.courseService.setCourseId(this.viewCourse.courseId);
     console.log(this.viewCourse);
 
     this.newFeedback.courseId = this.viewCourse.courseId;
@@ -42,6 +50,21 @@ export class CourseDetailsComponent implements OnInit {
       resp => {this.trainingMaterial = resp;
       console.log(resp);}
     );
+
+    this.courseService.getPreviousVersionTrainingMaterialFromRemote(this.viewCourse.courseId).subscribe(
+      resp => {this.allPreviousVersions = resp;
+        console.log(resp);}
+    );
+
+    this.loginService.getUserByEmailFromRemote(JSON.parse(this.loginService.getUserId()).email).subscribe(
+      resp => {
+        if(resp.userId === this.viewCourse.userId){
+          this.flag = 1;
+        }
+    }
+    );
+
+    this.loggedUser = JSON.parse(this.loginService.getUserId());
   }
 
   signOut() {
@@ -89,5 +112,29 @@ export class CourseDetailsComponent implements OnInit {
     const url = window.URL.createObjectURL(blob);
     window.open(url);
   }
+
+  openDialog(): void {
+
+    const dialogRef = this.dialog.open(UploadPopUpComponent, {
+      width: '300px',
+      // data: {courseName: this.courseName, courseDescription: this.courseDescription}
+    });
+  
+    // this.courseService.setEditCourse(course);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.courseName = result;
+    });
+  }
+
+  deleteMaterial(){
+    console.log(this.viewCourse);
+    this.courseService.deleteMaterialFromRemote(this.viewCourse.courseId).subscribe(
+      resp => {console.log("Deleted the material!");}
+    );
+
+  }
+
 
 }

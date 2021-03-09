@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CourseService } from 'src/app/services/course.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-view-course',
@@ -16,7 +17,8 @@ export class ViewCourseComponent implements OnInit {
 
   ngOnInit(): void {
     this.courseService.viewAllCoursesFromRemote().subscribe(
-      resp => {this.dataSource = resp;
+      resp => {
+        this.dataSource = new MatTableDataSource(resp);
       console.log(this.dataSource);}
     )
   }
@@ -33,6 +35,12 @@ export class ViewCourseComponent implements OnInit {
     console.log(element);
     this.courseService.setViewCourse(element);
     this.router.navigate(['/viewCourseDetails', element.courseId]);
+  }
+
+  applyFilter(event: Event) {
+    console.log(event);
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }

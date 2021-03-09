@@ -1,13 +1,13 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
+    <button mat-icon-button routerLinkActive="active item" [routerLinkActiveOptions]="{exact : true}" routerLink="/viewCourse" class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>home</mat-icon>
     </button>
     <span>Course Management</span>
     
     <span class="example-spacer"></span>
     <button mat-raised-button style="margin-right: 2%;" routerLinkActive="active item" [routerLinkActiveOptions]="{exact : true}" routerLink="/addCourse">Add Course</button>
-    <button mat-raised-button style="margin-right: 2%;" routerLinkActive="active item" [routerLinkActiveOptions]="{exact : true}" routerLink="/editCourse">Edit Course</button>
-    <button mat-raised-button style="margin-right: 2%;" routerLinkActive="active item" [routerLinkActiveOptions]="{exact : true}" routerLink="/viewCourse">View Course</button>
+    <button mat-raised-button style="margin-right: 2%;" routerLinkActive="active item" [routerLinkActiveOptions]="{exact : true}" routerLink="/editCourse">My Courses</button>
+    <!-- <button mat-raised-button style="margin-right: 2%;" routerLinkActive="active item" [routerLinkActiveOptions]="{exact : true}" routerLink="/viewCourse">View Course</button> -->
     <button mat-icon-button (click) = "signOut();" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>logout</mat-icon>
     </button>
@@ -27,7 +27,7 @@
         Created On: {{viewCourse.createdOn}}
     </div>
     <div>
-        Created By: {{viewCourse.createdOn}}
+        Created By: {{loggedUser.firstName}}
     </div>
 </mat-card>
 
@@ -57,7 +57,7 @@
     <div>
         <ul>
             <li *ngFor="let s of skill; let i = index">
-              {{i+1}}. {{s.skillName}}
+              {{s.skillName}}
             </li>
           </ul>
     </div>
@@ -68,10 +68,35 @@
         <div class = "example-card">
             <span class="material-icons">
                 get_app
-            </span> Download Training Material:
+            </span> Download Training Material:<span class="space"></span> 
             <button mat-raised-button (click) = "downloadFile(trainingMaterial[0].fileData, trainingMaterial[0].fileType)" color="primary"><span class="material-icons">get_app</span> Download</button>
+            <span class="space"></span> <button (click) = "openDialog()" *ngIf = "flag" mat-raised-button color="primary"><span class="material-icons">publish</span> Upload</button>
+            <span class="space"></span> <button (click) = "deleteMaterial()" *ngIf = "flag" mat-raised-button color="warn">
+                <span class="material-icons">
+                    delete
+                </span></button>
         </div>
     </h1>
+    <mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title style = "color: blue;">
+        {{panelOpenState ? 'Click here to close!' : 'Click here to view previous versions!'}}
+      </mat-panel-title>
+      <!-- <mat-panel-description style = "color: blue;">
+         
+      </mat-panel-description> -->
+    </mat-expansion-panel-header>
+    <p><strong>PREVIOUS VERSIONS</strong></p>
+    <div class = "example-card" *ngFor = "let version of allPreviousVersions; let i = index">
+         Version -{{i+1}}:<span class="space"></span> 
+        <button mat-raised-button (click) = "downloadFile(version.fileData, version.fileType)" color="primary"><span class="material-icons">get_app</span> Download</button>
+        <span class="space"></span>     
+        Uploaded On:   {{version.createdOn}}
+        <br> <br>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
 </mat-card>
     
 

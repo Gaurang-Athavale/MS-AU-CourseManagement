@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
         this.loginService.setUserId(this.user)
         console.log("EMAil: :  :: :: : : :", profile.getEmail())
         console.log("SignedIn");
-        this.router.navigate(['/home']);
+        this.router.navigate(['/viewCourse']);
 
       }
     );

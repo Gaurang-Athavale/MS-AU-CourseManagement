@@ -12,6 +12,7 @@ export class CourseService {
 
   editCourse: Course;
   viewCourse: Course;
+  courseId: Number;
 
   BASE_URL = "http://localhost:8080/";
   ADD_COURSE = "course/addCourse/";
@@ -26,6 +27,8 @@ export class CourseService {
   ADD_FEEDBACK = "feedback/addFeedback/";
   ADD_MATERIAL = "material/addMaterial/";
   GET_MATERIAL_BY_COURSE_ID = "material/getMaterial/";
+  GET_PREVIOUS_VERSIONS_BY_COURSE_ID = "material/getMaterialPreviousVersions/";
+  DELETE_MATERIAL = "material/deleteMaterial/";
 
   constructor(private http: HttpClient) { }
 
@@ -51,6 +54,14 @@ export class CourseService {
 
   public getViewCourse(){
     return this.viewCourse;
+  }
+
+  public setCourseId(courseId: Number){
+    this.courseId = courseId;
+  }
+
+  public getCourseId(){
+    return this.courseId;
   }
 
   public editDetails(course: Course): Observable<any>{
@@ -98,6 +109,14 @@ export class CourseService {
 
   public getTrainingMaterial(courseId: Number): Observable<any>{
     return this.http.get(this.BASE_URL + this.GET_MATERIAL_BY_COURSE_ID + courseId);
+  }
+
+  public getPreviousVersionTrainingMaterialFromRemote(courseId: Number): Observable<any>{
+    return this.http.get(this.BASE_URL + this.GET_PREVIOUS_VERSIONS_BY_COURSE_ID + courseId);
+  }
+
+  public deleteMaterialFromRemote(courseId: Number): Observable<any>{
+    return this.http.delete(this.BASE_URL + this.DELETE_MATERIAL + courseId);
   }
 
 }
