@@ -26,6 +26,7 @@ export class CourseDetailsComponent implements OnInit {
   panelOpenState = false;
   flag = 0;
   loggedUser: User;
+  isDisabled = false;
 
   constructor(private router: Router, private courseService: CourseService, public dialog: MatDialog, private loginService: LoginService) { }
 
@@ -48,6 +49,9 @@ export class CourseDetailsComponent implements OnInit {
 
     this.courseService.getTrainingMaterial(this.viewCourse.courseId).subscribe(
       resp => {this.trainingMaterial = resp;
+        if(this.trainingMaterial[0] == null){
+          this.isDisabled = true;
+        }
       console.log(resp);}
     );
 

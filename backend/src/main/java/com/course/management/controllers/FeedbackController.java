@@ -1,6 +1,7 @@
 package com.course.management.controllers;
 
 import com.course.management.models.Feedback;
+import com.course.management.models.FeedbackCount;
 import com.course.management.service.FeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,4 +27,16 @@ public class FeedbackController {
         return feedbackService.getFeedbacksByCourseId(courseId);
     }
 
+    @GetMapping("/getFeedbackCounts")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public List<FeedbackCount> getFeedbackCounts(){
+        return feedbackService.getFeedbackCounts();
+    }
+
+    @GetMapping("/getAverageRating")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public List<FeedbackCount> getAverageRating(){
+        System.out.println();
+        return feedbackService.getAverageRating();
+    }
 }

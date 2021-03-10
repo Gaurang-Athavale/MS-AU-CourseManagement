@@ -76,6 +76,7 @@ export class CourseComponent implements OnInit {
          resp => {console.log(resp);}
        )
        console.log(this.trainingMaterial);
+       this.message = "Course added successfully!!";
        }, 3000);
      }, 3000);
 
@@ -92,7 +93,7 @@ export class CourseComponent implements OnInit {
     //     )
     //   }
     // )
-     this.message = "Course added successfully!!";
+     
     //  this.course.courseName = "";
     //  this.course.courseDescription = "";
     //  this.course.prerequisite = "";

@@ -1,6 +1,7 @@
 package com.course.management.queries;
 
 import com.course.management.constants.Constants;
+import org.apache.tomcat.util.bcel.Const;
 
 public class Queries {
 
@@ -36,7 +37,7 @@ public class Queries {
 
     public static final String GET_COURSE_WITH_HIGHEST_ID = "SELECT * FROM " + Constants.COURSE + " HAVING " + Constants.COURSE_ID + " = (SELECT MAX(" + Constants.COURSE_ID + ") FROM " + Constants.COURSE + ")";
 
-    public static final String ADD_FEEDBACK = "INSERT INTO " + Constants.FEEDBACK + "(" + Constants.FEEDBACK_TEXT + "," + Constants.COURSE_ID + "," + Constants.CREATED_ON + "," + Constants.PARTICIPANT_NAME + ")VALUES(?,?,?,?)";
+    public static final String ADD_FEEDBACK = "INSERT INTO " + Constants.FEEDBACK + "(" + Constants.FEEDBACK_TEXT + "," + Constants.COURSE_ID + "," + Constants.CREATED_ON + "," + Constants.PARTICIPANT_NAME + "," + Constants.RATING + ")VALUES(?,?,?,?,?)";
 
     public static final String GET_FEEDBACK_BY_COURSE_ID = "SELECT * FROM " + Constants.FEEDBACK + " WHERE " + Constants.COURSE_ID + "=?";
 
@@ -55,6 +56,10 @@ public class Queries {
     public static final String UPDATE_NEW_CHILD = "UPDATE " + Constants.TRAINING_MATERIAL + " SET " + Constants.PARENT_ID + "=?," + Constants.isCurrent + "=?" + " WHERE " + Constants.MATERIAL_ID + "=?";
 
     public static final String GET_ALL_PREVIOUS_VERSIONS_BY_COURSE_ID = "SELECT * FROM " + Constants.TRAINING_MATERIAL + " WHERE " + Constants.COURSE_ID + "=? AND " + Constants.isCurrent + "=0 ORDER BY " + Constants.MATERIAL_ID + " DESC";
+
+    public static final String GET_COUNT_OF_FEEDBACKS = "SELECT " + Constants.COURSE_NAME + ", COUNT(*) AS RESULT FROM " + Constants.FEEDBACK + " JOIN " + Constants.COURSE + " WHERE " + Constants.FEEDBACK + "." + Constants.COURSE_ID + " = " + Constants.COURSE + "." + Constants.COURSE_ID + " GROUP BY " + Constants.COURSE_NAME + " ORDER BY COUNT(*) DESC";
+
+    public static final String GET_AVERAGE_RATING = "SELECT " + Constants.COURSE_NAME + ", AVG(" + Constants.RATING +") AS RESULT FROM " + Constants.FEEDBACK + " JOIN " + Constants.COURSE + " WHERE " + Constants.FEEDBACK + "." + Constants.COURSE_ID + " = " + Constants.COURSE + "." + Constants.COURSE_ID + " GROUP BY " + Constants.COURSE_NAME + " ORDER BY RESULT DESC";
 
 }
 

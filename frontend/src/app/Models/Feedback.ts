@@ -5,6 +5,7 @@ export class Feedback{
     participantName: String;
     feedbackText: String;
     createdOn: Date;
+    rating: Number;
 
     constructor() {}
 

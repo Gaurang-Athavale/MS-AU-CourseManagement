@@ -28,6 +28,7 @@ import { CourseDetailsComponent } from './components/course-details/course-detai
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import { UploadPopUpComponent } from './components/upload-pop-up/upload-pop-up.component';
+import { TrendsComponent } from './components/trends/trends.component';
 
 
 
@@ -45,7 +46,8 @@ import { UploadPopUpComponent } from './components/upload-pop-up/upload-pop-up.c
     EditCourseComponent,
     EditPopUpComponent,
     CourseDetailsComponent,
-    UploadPopUpComponent
+    UploadPopUpComponent,
+    TrendsComponent
   ],
   imports: [
     BrowserModule,

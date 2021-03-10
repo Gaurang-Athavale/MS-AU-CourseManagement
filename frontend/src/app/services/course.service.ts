@@ -29,6 +29,8 @@ export class CourseService {
   GET_MATERIAL_BY_COURSE_ID = "material/getMaterial/";
   GET_PREVIOUS_VERSIONS_BY_COURSE_ID = "material/getMaterialPreviousVersions/";
   DELETE_MATERIAL = "material/deleteMaterial/";
+  GET_FEEDBACK_COUNT = "feedback/getFeedbackCounts/";
+  GET_AVERAGE_RATING = "feedback/getAverageRating/";
 
   constructor(private http: HttpClient) { }
 
@@ -117,6 +119,14 @@ export class CourseService {
 
   public deleteMaterialFromRemote(courseId: Number): Observable<any>{
     return this.http.delete(this.BASE_URL + this.DELETE_MATERIAL + courseId);
+  }
+
+  public getFeedbackCountFromRemote(): Observable<any>{
+    return this.http.get(this.BASE_URL + this.GET_FEEDBACK_COUNT);
+  }
+
+  public getAverageRatingFromRemote(): Observable<any>{
+    return this.http.get(this.BASE_URL + this.GET_AVERAGE_RATING);
   }
 
 }

@@ -33,6 +33,8 @@ public class Constants {
     public static final String FEEDBACK_ID = "feedback_id";
     public static final String FEEDBACK_TEXT = "feedback_text";
     public static final String PARTICIPANT_NAME = "participant_name";
+    public static final String RESULT = "result";
+    public static final String RATING = "rating";
 
     // TrainingMaterial
     public static final String MATERIAL_ID = "material_id";
