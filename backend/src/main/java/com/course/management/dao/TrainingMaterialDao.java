@@ -12,8 +12,8 @@ public interface TrainingMaterialDao {
 
     public List<TrainingMaterial> getMaterialByCourseId(int courseId);
 
-    public List<TrainingMaterial> getMaterialPreviousVersions(int courseId);
+    public List<TrainingMaterial> getMaterialPreviousVersions(int courseId, int materialId);
 
-    public void deleteMaterial(int courseId);
+    public void deleteMaterial(int materialId);
 
 }

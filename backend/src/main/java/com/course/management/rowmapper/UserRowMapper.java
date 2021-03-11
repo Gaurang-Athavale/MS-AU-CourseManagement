@@ -14,6 +14,7 @@ public class UserRowMapper {
         User user = new User();
         user.setEmail(rs.getString(Constants.EMAIL));
         user.setUserId(rs.getInt(Constants.USER_ID));
+        user.setFirstName(rs.getString(Constants.FIRST_NAME));
 
         return user;
     };

@@ -13,6 +13,7 @@ export class UploadPopUpComponent implements OnInit {
   files: any;
   fileAttr = 'Choose File';
   blob: Blob;
+  materialId: Number;
 
   constructor(private courseService: CourseService) { }
 
@@ -35,7 +36,9 @@ export class UploadPopUpComponent implements OnInit {
   }
 
   onAddMaterial() {
-    this.courseService.addTrainingMaterialfromRemote(this.courseService.getCourseId(), this.trainingMaterial.fileType, this.trainingMaterial.fileName, this.files).subscribe(
+    this.materialId = this.courseService.getMaterialId();
+    console.log(this.materialId);
+    this.courseService.addTrainingMaterialfromRemote(this.materialId, this.courseService.getCourseId(), this.trainingMaterial.fileType, this.trainingMaterial.fileName, this.files).subscribe(
       resp => {console.log(resp);}
     )
     console.log(this.trainingMaterial);

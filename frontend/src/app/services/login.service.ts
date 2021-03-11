@@ -11,6 +11,7 @@ export class LoginService {
   BASE_URL = "http://localhost:8080/";
   LOGIN = "addUser/";
   GET_USER_BY_EMAIL = "getUserByEmail/";
+  GET_USER_BY_USER_ID = "getUserByUserId/";
 
   user: User;
 
@@ -33,4 +34,9 @@ export class LoginService {
   public getUserByEmailFromRemote(email: string): Observable<any> {
     return this.http.get(this.BASE_URL + this.GET_USER_BY_EMAIL + email);
   }
+
+  public getUserByUserIdFromRemote(id: Number): Observable<any>{
+    return this.http.get(this.BASE_URL + this.GET_USER_BY_USER_ID + id);
+  }
+
 }

@@ -45,4 +45,9 @@ public class UserDaoImpl implements UserDao {
         System.out.println(email);
         return jdbcTemplate.queryForObject(Queries.GET_USERS_BY_EMAIL, UserRowMapper.UserRowMapperLambda, email);
     }
+
+    @Override
+    public User getUserByUserId(int userId) {
+        return jdbcTemplate.queryForObject(Queries.GET_USER_BY_USER_ID, UserRowMapper.UserRowMapperLambda, userId);
+    }
 }

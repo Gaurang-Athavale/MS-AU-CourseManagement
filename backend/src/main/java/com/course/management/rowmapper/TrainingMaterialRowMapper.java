@@ -20,6 +20,7 @@ public class TrainingMaterialRowMapper {
         trainingMaterial.setCreatedOn(rs.getDate(Constants.CREATED_ON));
         trainingMaterial.setLastModified(rs.getDate(Constants.LAST_MODIFIED));
         trainingMaterial.setFileType(rs.getString(Constants.FILE_TYPE));
+        trainingMaterial.setParentId(rs.getInt(Constants.PARENT_ID));
 
         return trainingMaterial;
 

@@ -18,7 +18,7 @@ export class CourseComponent implements OnInit {
 
   skill: Skill = new Skill();
 
-  trainingMaterial: TrainingMaterial = new TrainingMaterial();
+  trainingMaterial: TrainingMaterial[] = [];
 
   message: String = "";
 
@@ -27,6 +27,8 @@ export class CourseComponent implements OnInit {
   fileAttr = 'Choose File';
 
   blob: Blob;
+
+  currentCourse: number;
 
   constructor(private router: Router, private courseService: CourseService, private loginService: LoginService) { }
 
@@ -61,7 +63,7 @@ export class CourseComponent implements OnInit {
       this.courseService.getCourseWithHighestId().subscribe(
         resp => {
           this.skill.courseId = resp.courseId;
-          this.trainingMaterial.courseId = resp.courseId;
+          this.currentCourse= resp.courseId;
           console.log(this.trainingMaterial);
 
           console.log("RESP", resp);
@@ -72,12 +74,15 @@ export class CourseComponent implements OnInit {
       )
 
       setTimeout(() => {
-        this.courseService.addTrainingMaterialfromRemote(this.trainingMaterial.courseId, this.trainingMaterial.fileType, this.trainingMaterial.fileName, this.files).subscribe(
+        for(let i = 0; i < this.trainingMaterial.length; i++){
+        this.courseService.addTrainingMaterialfromRemote(0, this.currentCourse, this.trainingMaterial[i].fileType, this.trainingMaterial[i].fileName, this.files[i]).subscribe(
          resp => {console.log(resp);}
        )
        console.log(this.trainingMaterial);
        this.message = "Course added successfully!!";
+      }
        }, 3000);
+      
      }, 3000);
 
      
@@ -112,11 +117,14 @@ export class CourseComponent implements OnInit {
   onFileChanged(event){
     // this.files = event.target.files[0];
     this.files = event;
-    console.log(this.files);
-    console.log(this.files.type);
-    this.trainingMaterial.fileName = this.files.name;
-    this.fileAttr = this.trainingMaterial.fileName;
-    this.trainingMaterial.fileType = this.files.type;
+    // console.log(this.files);
+    // console.log(this.files.type);
+    for (let i = 0; i < this.files.length; i++){
+      this.trainingMaterial.push(new TrainingMaterial());
+      this.trainingMaterial[i].fileName = this.files[i].name;
+      this.fileAttr = this.trainingMaterial[i].fileName;
+      this.trainingMaterial[i].fileType = this.files[i].type;
+    }
     // this.blob = new Blob(this.files, {});
     // this.trainingMaterial.fileData = this.files;
     // this.blob = new Blob(this.files);

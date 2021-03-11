@@ -1,5 +1,5 @@
 export class Course{
-    courseId: Number;
+    courseId: number;
     courseName: String;
     courseDescription: String;
     prerequisite: String;

@@ -13,6 +13,7 @@ export class CourseService {
   editCourse: Course;
   viewCourse: Course;
   courseId: Number;
+  materialId: Number;
 
   BASE_URL = "http://localhost:8080/";
   ADD_COURSE = "course/addCourse/";
@@ -66,6 +67,14 @@ export class CourseService {
     return this.courseId;
   }
 
+  public setMaterialId(materialId: Number){
+    this.materialId = materialId;
+  }
+
+  public getMaterialId(){
+    return this.materialId;
+  }
+
   public editDetails(course: Course): Observable<any>{
     return this.http.put(this.BASE_URL + this.EDIT_COURSE, course);
   }
@@ -98,7 +107,7 @@ export class CourseService {
     return this.http.get(this.BASE_URL + this.GET_FEEDBACK_BY_COURSE_ID + courseId);
   }
 
-  public addTrainingMaterialfromRemote(courseId: Number, fileType: string, fileName: string, file: File): Observable<any>{
+  public addTrainingMaterialfromRemote(materialId: Number, courseId: Number, fileType: string, fileName: string, file: File): Observable<any>{
     const formData: FormData = new FormData();
     console.log(courseId);
     console.log(fileName);
@@ -106,6 +115,7 @@ export class CourseService {
     formData.append('fileType', fileType);
     formData.append('courseId', courseId.toString());
     formData.append('fileName', fileName);
+    formData.append('materialId', materialId.toString());
     return this.http.post(this.BASE_URL + this.ADD_MATERIAL, formData, {responseType: 'text'});
   }
 
@@ -113,12 +123,13 @@ export class CourseService {
     return this.http.get(this.BASE_URL + this.GET_MATERIAL_BY_COURSE_ID + courseId);
   }
 
-  public getPreviousVersionTrainingMaterialFromRemote(courseId: Number): Observable<any>{
-    return this.http.get(this.BASE_URL + this.GET_PREVIOUS_VERSIONS_BY_COURSE_ID + courseId);
+  public getPreviousVersionTrainingMaterialFromRemote(courseId: number, materialId: number): Observable<any>{
+    console.log("Service: ", courseId, materialId);
+    return this.http.get(this.BASE_URL + this.GET_PREVIOUS_VERSIONS_BY_COURSE_ID + courseId + "/" + materialId);
   }
 
-  public deleteMaterialFromRemote(courseId: Number): Observable<any>{
-    return this.http.delete(this.BASE_URL + this.DELETE_MATERIAL + courseId);
+  public deleteMaterialFromRemote(materialId: Number): Observable<any>{
+    return this.http.delete(this.BASE_URL + this.DELETE_MATERIAL + materialId);
   }
 
   public getFeedbackCountFromRemote(): Observable<any>{

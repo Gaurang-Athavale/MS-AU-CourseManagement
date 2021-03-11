@@ -27,12 +27,12 @@ public class TrainingMaterialServiceImpl implements TrainingMaterialService {
     }
 
     @Override
-    public List<TrainingMaterial> getMaterialPreviousVersions(int courseId) {
-        return trainingMaterialDao.getMaterialPreviousVersions(courseId);
+    public List<TrainingMaterial> getMaterialPreviousVersions(int courseId, int materialId) {
+        return trainingMaterialDao.getMaterialPreviousVersions(courseId, materialId);
     }
 
     @Override
-    public void deleteMaterial(int courseId) {
-        trainingMaterialDao.deleteMaterial(courseId);
+    public void deleteMaterial(int materialId) {
+        trainingMaterialDao.deleteMaterial(materialId);
     }
 }

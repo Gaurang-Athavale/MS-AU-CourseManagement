@@ -21,8 +21,8 @@ export class CourseDetailsComponent implements OnInit {
   skill: Skill[];
   feedback: Feedback[];
   newFeedback: Feedback = new Feedback();
-  trainingMaterial: TrainingMaterial;
-  allPreviousVersions: TrainingMaterial[];
+  trainingMaterial: TrainingMaterial[];
+  allPreviousVersions: TrainingMaterial[] = [];
   panelOpenState = false;
   flag = 0;
   loggedUser: User;
@@ -34,6 +34,8 @@ export class CourseDetailsComponent implements OnInit {
     this.viewCourse = this.courseService.getViewCourse();
     this.courseService.setCourseId(this.viewCourse.courseId);
     console.log(this.viewCourse);
+
+    
 
     this.newFeedback.courseId = this.viewCourse.courseId;
 
@@ -49,16 +51,38 @@ export class CourseDetailsComponent implements OnInit {
 
     this.courseService.getTrainingMaterial(this.viewCourse.courseId).subscribe(
       resp => {this.trainingMaterial = resp;
+        console.log(resp);
         if(this.trainingMaterial[0] == null){
           this.isDisabled = true;
         }
-      console.log(resp);}
+      console.log(resp);
+
+
+      for(let i = 0; i<this.trainingMaterial.length; i++){
+        this.allPreviousVersions.push(new TrainingMaterial());
+      }
+      for(let i = 0; i<this.trainingMaterial.length; i++){
+        // console.log(this.viewCourse.courseId);
+        console.log(this.trainingMaterial[i]);
+        this.courseService.getPreviousVersionTrainingMaterialFromRemote(this.viewCourse.courseId, this.trainingMaterial[i].materialId).subscribe(
+          resp => {this.allPreviousVersions[i] = resp;
+            console.log(this.allPreviousVersions);
+            }
+        );
+      }
+      
+
+    }
     );
 
-    this.courseService.getPreviousVersionTrainingMaterialFromRemote(this.viewCourse.courseId).subscribe(
-      resp => {this.allPreviousVersions = resp;
-        console.log(resp);}
-    );
+    
+
+    // for(let i = 0; i<this.trainingMaterial.length; i++){
+    //     this.courseService.getPreviousVersionTrainingMaterialFromRemote(this.viewCourse.courseId).subscribe(
+    //       resp => {this.allPreviousVersions.push(resp);
+    //         console.log(resp);}
+    //     );
+    //   }
 
     this.loginService.getUserByEmailFromRemote(JSON.parse(this.loginService.getUserId()).email).subscribe(
       resp => {
@@ -69,6 +93,12 @@ export class CourseDetailsComponent implements OnInit {
     );
 
     this.loggedUser = JSON.parse(this.loginService.getUserId());
+    // this.loginService.getUserByUserIdFromRemote(this.viewCourse.userId).subscribe(
+    //   resp => {
+    //     this.loggedUser = resp;
+    //   }
+    // );
+    
   }
 
   signOut() {
@@ -109,19 +139,20 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   downloadFile(data, fileType) {
-    console.log(this.trainingMaterial[0]);
+    console.log(this.trainingMaterial);
     const byteArray = this.base64ToArrayBuffer(data);
-    console.log(data);
+    // console.log(data);
     const blob = new Blob([byteArray], { type: fileType });
     const url = window.URL.createObjectURL(blob);
     window.open(url);
   }
 
-  openDialog(): void {
+  openDialog(materialId: Number): void {
 
+    this.courseService.setMaterialId(materialId);
     const dialogRef = this.dialog.open(UploadPopUpComponent, {
       width: '300px',
-      // data: {courseName: this.courseName, courseDescription: this.courseDescription}
+      // data: {materialId: materialId}
     });
   
     // this.courseService.setEditCourse(course);
@@ -132,9 +163,9 @@ export class CourseDetailsComponent implements OnInit {
     });
   }
 
-  deleteMaterial(){
+  deleteMaterial(materialId: Number){
     console.log(this.viewCourse);
-    this.courseService.deleteMaterialFromRemote(this.viewCourse.courseId).subscribe(
+    this.courseService.deleteMaterialFromRemote(materialId).subscribe(
       resp => {console.log("Deleted the material!");}
     );
 

@@ -18,6 +18,7 @@ public class FeedbackRowMapper {
         feedback.setCourseId((rs.getInt(Constants.COURSE_ID)));
         feedback.setParticipantName((rs.getString(Constants.PARTICIPANT_NAME)));
         feedback.setCreatedOn((rs.getDate(Constants.CREATED_ON)));
+        feedback.setRating((rs.getInt(Constants.RATING)));
 
 
         return feedback;

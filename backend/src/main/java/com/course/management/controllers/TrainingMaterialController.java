@@ -11,38 +11,36 @@ import java.util.List;
 
 @RestController
 @RequestMapping("material")
+@CrossOrigin(origins = "http://localhost:4200")
 public class TrainingMaterialController {
 
     @Autowired
     private TrainingMaterialService trainingMaterialService;
 
     @PostMapping("/addMaterial")
-    @CrossOrigin(origins = "http://localhost:4200")
-    public TrainingMaterial addMaterial(@RequestParam String courseId, @RequestParam String fileName, @RequestParam String fileType, @RequestParam MultipartFile file) throws IOException {
+    public TrainingMaterial addMaterial(@RequestParam String materialId, @RequestParam String courseId, @RequestParam String fileName, @RequestParam String fileType, @RequestParam MultipartFile file) throws IOException {
         TrainingMaterial trainingMaterial = new TrainingMaterial();
         trainingMaterial.setCourseId(Integer.parseInt(courseId));
         trainingMaterial.setFileName(fileName);
         trainingMaterial.setFileType(fileType);
+        trainingMaterial.setMaterialId(Integer.parseInt(materialId));
         System.out.println(trainingMaterial.getCourseId());
         return trainingMaterialService.addMaterial(trainingMaterial, file);
     }
 
     @GetMapping("/getMaterial/{courseId}")
-    @CrossOrigin(origins = "http://localhost:4200")
     public List<TrainingMaterial> getMaterialByCourseId(@PathVariable int courseId){
         return trainingMaterialService.getMaterialByCourseId(courseId);
     }
 
-    @GetMapping("/getMaterialPreviousVersions/{courseId}")
-    @CrossOrigin(origins = "http://localhost:4200")
-    public List<TrainingMaterial> getMaterialPreviousVersions(@PathVariable int courseId){
-        return trainingMaterialService.getMaterialPreviousVersions(courseId);
+    @GetMapping("/getMaterialPreviousVersions/{courseId}/{materialId}")
+    public List<TrainingMaterial> getMaterialPreviousVersions(@PathVariable("courseId") int courseId, @PathVariable("materialId") int materialId){
+        return trainingMaterialService.getMaterialPreviousVersions(courseId, materialId);
     }
 
-    @DeleteMapping("/deleteMaterial/{courseId}")
-    @CrossOrigin(origins = "http://localhost:4200")
-    public void deleteMaterial(@PathVariable int courseId){
-        trainingMaterialService.deleteMaterial(courseId);
+    @DeleteMapping("/deleteMaterial/{materialId}")
+    public void deleteMaterial(@PathVariable int materialId){
+        trainingMaterialService.deleteMaterial(materialId);
     }
 
 }

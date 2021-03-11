@@ -1,6 +1,6 @@
 export class TrainingMaterial{
 
-    materialId: Number;
+    materialId: number;
     courseId: Number;
     fileName: string;
     fileData: any;

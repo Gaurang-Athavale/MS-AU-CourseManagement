@@ -31,7 +31,7 @@ public class Queries {
 
     public static final String DELETE_TRAINING_MATERIAL = "DELETE FROM " + Constants.TRAINING_MATERIAL + " WHERE " + Constants.COURSE_ID + "=?";
 
-    public static final String DELETE_LATEST_TRAINING_MATERIAL = "DELETE FROM " + Constants.TRAINING_MATERIAL + " WHERE " + Constants.COURSE_ID + "=? AND " + Constants.isCurrent + "=1";
+    public static final String DELETE_LATEST_TRAINING_MATERIAL = "DELETE FROM " + Constants.TRAINING_MATERIAL + " WHERE " + Constants.MATERIAL_ID + "=?";
 
     public static final String ADD_SKILL = "INSERT INTO " + Constants.SKILL + "(" + Constants.SKILL_NAME + "," + Constants.COURSE_ID + ")VALUES(?,?)";
 
@@ -60,6 +60,8 @@ public class Queries {
     public static final String GET_COUNT_OF_FEEDBACKS = "SELECT " + Constants.COURSE_NAME + ", COUNT(*) AS RESULT FROM " + Constants.FEEDBACK + " JOIN " + Constants.COURSE + " WHERE " + Constants.FEEDBACK + "." + Constants.COURSE_ID + " = " + Constants.COURSE + "." + Constants.COURSE_ID + " GROUP BY " + Constants.COURSE_NAME + " ORDER BY COUNT(*) DESC";
 
     public static final String GET_AVERAGE_RATING = "SELECT " + Constants.COURSE_NAME + ", AVG(" + Constants.RATING +") AS RESULT FROM " + Constants.FEEDBACK + " JOIN " + Constants.COURSE + " WHERE " + Constants.FEEDBACK + "." + Constants.COURSE_ID + " = " + Constants.COURSE + "." + Constants.COURSE_ID + " GROUP BY " + Constants.COURSE_NAME + " ORDER BY RESULT DESC";
+
+    public static final String GET_USER_BY_USER_ID = "SELECT * FROM " + Constants.USER + " WHERE " + Constants.USER_ID + "=?";
 
 }
 

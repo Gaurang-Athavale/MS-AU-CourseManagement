@@ -82,7 +82,7 @@
             Browse
           </button>
           <!-- Fetch selected filed on change -->
-          <input type="file" #fileInput id="uploadFile" (change)="onFileChanged($event.target.files[0])" name="file1" required>
+          <input type="file" #fileInput id="uploadFile" (change)="onFileChanged($event.target.files)" name="file1" required multiple>
           <!-- Display files names -->
           <input matInput [(ngModel)]="fileAttr" readonly name="name" />
         </mat-toolbar>

@@ -71,23 +71,50 @@
             <span class="material-icons">
                 get_app
             </span> Download Training Material:<span class="space"></span> 
-            <button [disabled] = "isDisabled" mat-raised-button (click) = "downloadFile(trainingMaterial[0].fileData, trainingMaterial[0].fileType)" color="primary"><span class="material-icons">get_app</span> Download</button>
-            <span class="space"></span> <button (click) = "openDialog()" *ngIf = "flag" mat-raised-button color="primary"><span class="material-icons">publish</span> Upload</button>
-            <span class="space"></span> <button [disabled] = "isDisabled" (click) = "deleteMaterial()" *ngIf = "flag" mat-raised-button color="warn">
+        </div>
+
+    </h1>
+            <div *ngFor = "let material of trainingMaterial; let i = index;">
+                <!-- {{material | json}} -->
+                {{i+1}}. {{material.fileName}}<br><span class="space"></span>
+            <button [disabled] = "isDisabled" mat-raised-button (click) = "downloadFile(material.fileData, material.fileType)" color="primary"><span class="material-icons">get_app</span> Download</button>
+            <span class="space"></span> <button (click) = "openDialog(material.materialId)" *ngIf = "flag" mat-raised-button color="primary"><span class="material-icons">publish</span> Upload</button>
+            <span class="space"></span> <button [disabled] = "isDisabled" (click) = "deleteMaterial(material.materialId)" *ngIf = "flag" mat-raised-button color="warn">
                 <span class="material-icons">
                     delete
                 </span></button>
-        </div>
-    </h1>
-    <mat-accordion>
+                <br><br>
+                <mat-accordion>
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title style = "color: blue;">
+                        {{panelOpenState ? 'Click here to close!' : 'Click here to view previous versions!'}}
+                      </mat-panel-title>
+                      <!-- <mat-panel-description style = "color: blue;">
+                         
+                      </mat-panel-description> -->
+                    </mat-expansion-panel-header>
+                    <p><strong>PREVIOUS VERSIONS</strong></p>
+                    <div class = "example-card" *ngFor = "let version of allPreviousVersions[i]; let j = index">
+                         Version -{{j+1}}:<span class="space"></span> 
+                        <button mat-raised-button (click) = "downloadFile(version.fileData, version.fileType)" color="primary"><span class="material-icons">get_app</span> Download</button>
+                        <span class="space"></span>     
+                        Uploaded On:   {{version.createdOn}}
+                        <br> <br>
+                    </div>
+                  </mat-expansion-panel>
+                </mat-accordion>
+                <br><br>
+
+            </div>
+        <!-- </div> -->
+    <!-- </h1> -->
+    <!-- <mat-accordion>
     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
     <mat-expansion-panel-header>
       <mat-panel-title style = "color: blue;">
         {{panelOpenState ? 'Click here to close!' : 'Click here to view previous versions!'}}
       </mat-panel-title>
-      <!-- <mat-panel-description style = "color: blue;">
-         
-      </mat-panel-description> -->
     </mat-expansion-panel-header>
     <p><strong>PREVIOUS VERSIONS</strong></p>
     <div class = "example-card" *ngFor = "let version of allPreviousVersions; let i = index">
@@ -98,7 +125,7 @@
         <br> <br>
     </div>
   </mat-expansion-panel>
-</mat-accordion>
+</mat-accordion> -->
 </mat-card>
     
 
