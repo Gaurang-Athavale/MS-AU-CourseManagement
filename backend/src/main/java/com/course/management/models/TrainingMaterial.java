@@ -22,6 +22,7 @@ public class TrainingMaterial {
 
     private String fileType;
 
+
     public int getMaterialId() {
         return materialId;
     }

@@ -8,6 +8,9 @@ public class Skill {
 
     private int courseId;
 
+    public Skill() {
+    }
+
     public String getSkillName() {
         return skillName;
     }

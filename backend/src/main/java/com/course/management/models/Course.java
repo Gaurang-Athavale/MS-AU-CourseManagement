@@ -18,6 +18,9 @@ public class Course {
 
     private Date lastModified;
 
+    public Course() {
+    }
+
     public int getCourseId() {
         return courseId;
     }

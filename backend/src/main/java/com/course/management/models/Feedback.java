@@ -16,6 +16,9 @@ public class Feedback {
 
     private int rating;
 
+    public Feedback() {
+    }
+
     public int getRating() {
         return rating;
     }

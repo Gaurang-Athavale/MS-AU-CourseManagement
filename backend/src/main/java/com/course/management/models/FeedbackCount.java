@@ -8,6 +8,10 @@ public class FeedbackCount {
 
     private float avgRating;
 
+
+    public FeedbackCount() {
+    }
+
     public String getCourseName() {
         return courseName;
     }
