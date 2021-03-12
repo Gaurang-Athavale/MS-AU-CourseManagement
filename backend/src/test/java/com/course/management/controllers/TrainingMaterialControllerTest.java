@@ -16,16 +16,17 @@ import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.doThrow;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.mockito.Mockito.lenient;
 
 @WebMvcTest(controllers = TrainingMaterialController.class)
 class TrainingMaterialControllerTest {
@@ -57,15 +58,26 @@ class TrainingMaterialControllerTest {
     }
 
 //    @Test
-//    void addMaterial() throws IOException {
+//    void addMaterial() throws Exception {
+//        MultipartFile multipartFile = new MockMultipartFile("test.xlsx", new FileInputStream(new File("D:\\Gaurang\\Somaiya.pdf")));
 //        TrainingMaterial trainingMaterial = setTrainingMaterial();
+//
+//        lenient().when(trainingMaterialService.addMaterial(trainingMaterial,multipartFile)).thenReturn(trainingMaterial);
+//
 //        String jsonString = objectMapper.writeValueAsString(trainingMaterial);
-//        Mockito.when(trainingMaterialService.addMaterial(trainingMaterial.getMaterialId(),trainingMaterial.getCourseId(), trainingMaterial.getFileName(), trainingMaterial.getFileType())).thenReturn(trainingMaterial);
-//        mockMvc.perform(post("/course/addCourse")
-//                .contentType(MediaType.APPLICATION_JSON_VALUE)
-//                .content(jsonString)
-//                .accept(MediaType.APPLICATION_JSON_VALUE)
-//        ).andExpect(status().isOk());
+//
+//        Mockito.when(trainingMaterialService.addMaterial(trainingMaterial, multipartFile)).thenReturn(trainingMaterial);
+//
+//        System.out.println(multipartFile);
+//
+//        mockMvc.perform(multipart("/material/addMaterial")
+//                .file("file", multipartFile.getBytes())
+//                .param("courseId",String.valueOf(trainingMaterial.getCourseId()))
+//                .param("materialId", String.valueOf(trainingMaterial.getMaterialId()))
+//                .param("fileName", trainingMaterial.getFileName())
+//                .param("fileType", trainingMaterial.getFileType()))
+//                .andDo(print())
+//                .andExpect(status().isOk());
 //    }
 
     @Test

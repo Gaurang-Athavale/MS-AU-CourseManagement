@@ -143,11 +143,23 @@
                 <mat-label>Give a Feedback</mat-label><br>
                 <input type="text" matInput placeholder="Give a Feedback" name = "feedbackText" [(ngModel)] = "newFeedback.feedbackText" required><br><br>
             </mat-form-field>
-            <mat-form-field class="example-full-width">
+            <!-- <mat-form-field class="example-full-width">
                 <mat-label>Rating</mat-label><br>
                 <input type="number" matInput placeholder="Add Rating (0-5)" name = "rating" [(ngModel)] = "newFeedback.rating" required><br><br>
-            </mat-form-field>
-            
+            </mat-form-field> -->
+            <br>
+            <br>
+            <mat-form-field  class="example-full-width">
+                <mat-label>Rating</mat-label>
+                <mat-select [(ngModel)]="newFeedback.rating">
+                  <mat-option value=1>1</mat-option>
+                  <mat-option value=2>2</mat-option>
+                  <mat-option value=3>3</mat-option>
+                  <mat-option value=4>4</mat-option>
+                  <mat-option value=5>5</mat-option>
+                </mat-select>
+              </mat-form-field>
+
         <!-- </mat-form-field> -->
         <span class = "space"></span>
         <button (click)="onAddFeedBack()" mat-raised-button color = "primary">Submit</button> 

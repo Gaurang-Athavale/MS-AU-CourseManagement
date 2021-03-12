@@ -29,7 +29,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import { UploadPopUpComponent } from './components/upload-pop-up/upload-pop-up.component';
 import { TrendsComponent } from './components/trends/trends.component';
-
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -65,7 +65,8 @@ import { TrendsComponent } from './components/trends/trends.component';
     MatDialogModule,
     MatExpansionModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [SocialAuthService],
   bootstrap: [AppComponent]
