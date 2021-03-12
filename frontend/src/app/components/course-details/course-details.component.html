@@ -65,6 +65,19 @@
     </div>
 </mat-card>
 
+<mat-card class = "card">
+    <h1>
+        <div class="example-card">
+            <span class="material-icons">
+                publish
+            </span> Upload New Material: <span class="space"></span> 
+            <button mat-raised-button *ngIf = "flag" color="primary" (click) = "openDialog1()"><span class="material-icons">
+                publish
+            </span> Upload</button>
+        </div>
+    </h1>
+</mat-card>
+
 <mat-card class="card">
     <h1>
         <div class = "example-card">
@@ -98,6 +111,8 @@
                     <div class = "example-card" *ngFor = "let version of allPreviousVersions[i]; let j = index">
                          Version -{{j+1}}:<span class="space"></span> 
                         <button mat-raised-button (click) = "downloadFile(version.fileData, version.fileType)" color="primary"><span class="material-icons">get_app</span> Download</button>
+                        <span class="space"></span>  
+                        {{version.fileName}}
                         <span class="space"></span>     
                         Uploaded On:   {{version.createdOn}}
                         <br> <br>
@@ -107,25 +122,6 @@
                 <br><br>
 
             </div>
-        <!-- </div> -->
-    <!-- </h1> -->
-    <!-- <mat-accordion>
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-    <mat-expansion-panel-header>
-      <mat-panel-title style = "color: blue;">
-        {{panelOpenState ? 'Click here to close!' : 'Click here to view previous versions!'}}
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <p><strong>PREVIOUS VERSIONS</strong></p>
-    <div class = "example-card" *ngFor = "let version of allPreviousVersions; let i = index">
-         Version -{{i+1}}:<span class="space"></span> 
-        <button mat-raised-button (click) = "downloadFile(version.fileData, version.fileType)" color="primary"><span class="material-icons">get_app</span> Download</button>
-        <span class="space"></span>     
-        Uploaded On:   {{version.createdOn}}
-        <br> <br>
-    </div>
-  </mat-expansion-panel>
-</mat-accordion> -->
 </mat-card>
     
 
@@ -137,16 +133,10 @@
             </span> Feedbacks
         </div>
     </h1> 
-        <!-- <mat-form-field class="example-full-width"> -->
-            <!-- <mat-label>Give a feedback</mat-label> -->
             <mat-form-field class="example-full-width">
                 <mat-label>Give a Feedback</mat-label><br>
                 <input type="text" matInput placeholder="Give a Feedback" name = "feedbackText" [(ngModel)] = "newFeedback.feedbackText" required><br><br>
             </mat-form-field>
-            <!-- <mat-form-field class="example-full-width">
-                <mat-label>Rating</mat-label><br>
-                <input type="number" matInput placeholder="Add Rating (0-5)" name = "rating" [(ngModel)] = "newFeedback.rating" required><br><br>
-            </mat-form-field> -->
             <br>
             <br>
             <mat-form-field  class="example-full-width">

@@ -1,0 +1,268 @@
+12-03-2021 21:12:32.0842|INFO |Starting CourseManagementApplication using Java 1.8.0_282 on LAPTOP-V2QGT2TT with PID 16512 (D:\Accolite-Internship\MS-AU Project\backend\target\classes started by gaura in D:\Accolite-Internship\MS-AU Project\backend)
+12-03-2021 21:12:32.0847|INFO |No active profile set, falling back to default profiles: default
+12-03-2021 21:12:36.0336|INFO |Started CourseManagementApplication in 4.038 seconds (JVM running for 4.957)
+12-03-2021 21:12:53.0621|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 21:12:54.0013|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 21:12:55.0815|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 21:12:56.0422|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 21:12:56.0974|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 21:16:16.0934|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 21:16:18.0432|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 21:16:19.0265|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 21:16:20.0422|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 21:16:21.0432|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 21:16:22.0106|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 21:16:22.0866|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 21:16:35.0775|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 21:16:38.0084|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 21:16:51.0967|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 21:42:32.0562|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:14:10.0512|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:25:33.0438|INFO |Starting CourseManagementApplication using Java 1.8.0_282 on LAPTOP-V2QGT2TT with PID 7508 (D:\Accolite-Internship\MS-AU Project\backend\target\classes started by gaura in D:\Accolite-Internship\MS-AU Project\backend)
+12-03-2021 22:25:33.0442|INFO |No active profile set, falling back to default profiles: default
+12-03-2021 22:25:36.0793|INFO |Started CourseManagementApplication in 3.93 seconds (JVM running for 5.118)
+12-03-2021 22:27:34.0734|INFO |Retrieved All Users
+12-03-2021 22:27:34.0920|INFO |Retrieved All Courses
+12-03-2021 22:27:42.0609|INFO |Retrieved All Users
+12-03-2021 22:27:42.0632|INFO |Retrieved All Courses
+12-03-2021 22:27:45.0820|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:27:45.0821|INFO |Retrieved feedbacks1 with courseId = 26
+12-03-2021 22:27:45.0822|INFO |Retrieved Material with courseId = 26
+12-03-2021 22:27:45.0823|INFO |Retrieved skills with courseId = 26
+12-03-2021 22:27:45.0927|INFO |Retrieved all previous versions for courseId = 26
+12-03-2021 22:27:48.0948|INFO |Retrieved All Courses
+12-03-2021 22:27:50.0315|INFO |Retrieved feedbacks1 with courseId = 91
+12-03-2021 22:27:50.0315|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:27:50.0315|INFO |Retrieved Material with courseId = 91
+12-03-2021 22:27:50.0315|INFO |Retrieved skills with courseId = 91
+12-03-2021 22:27:51.0355|INFO |Retrieved All Courses
+12-03-2021 22:27:52.0291|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:27:52.0305|INFO |Retrieved courses uploaded by userId = 3
+12-03-2021 22:27:55.0683|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:27:55.0683|INFO |Retrieved feedbacks1 with courseId = 89
+12-03-2021 22:27:55.0685|INFO |Retrieved Material with courseId = 89
+12-03-2021 22:27:55.0685|INFO |Retrieved skills with courseId = 89
+12-03-2021 22:27:56.0503|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:27:56.0519|INFO |Retrieved courses uploaded by userId = 3
+12-03-2021 22:27:57.0709|INFO |Retrieved skills with courseId = 93
+12-03-2021 22:27:57.0709|INFO |Retrieved feedbacks1 with courseId = 93
+12-03-2021 22:27:57.0710|INFO |Retrieved Material with courseId = 93
+12-03-2021 22:27:57.0711|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:27:58.0557|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:27:58.0568|INFO |Retrieved courses uploaded by userId = 3
+12-03-2021 22:27:59.0552|INFO |Retrieved All Courses
+12-03-2021 22:29:37.0829|INFO |Starting CourseManagementApplication using Java 1.8.0_282 on LAPTOP-V2QGT2TT with PID 1344 (D:\Accolite-Internship\MS-AU Project\backend\target\classes started by gaura in D:\Accolite-Internship\MS-AU Project\backend)
+12-03-2021 22:29:37.0832|INFO |No active profile set, falling back to default profiles: default
+12-03-2021 22:29:41.0488|INFO |Started CourseManagementApplication in 4.099 seconds (JVM running for 4.883)
+12-03-2021 22:31:04.0311|INFO |Retrieved All Users
+12-03-2021 22:31:04.0394|INFO |Retrieved All Courses
+12-03-2021 22:31:17.0318|INFO |Retrieved All Users
+12-03-2021 22:31:17.0349|INFO |Retrieved All Courses
+12-03-2021 22:31:20.0886|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:31:20.0889|INFO |Retrieved Material with courseId = 26
+12-03-2021 22:31:20.0890|INFO |Retrieved feedbacks1 with courseId = 26
+12-03-2021 22:31:20.0892|INFO |Retrieved skills with courseId = 26
+12-03-2021 22:31:20.0971|INFO |Retrieved all previous versions for courseId = 26
+12-03-2021 22:31:23.0332|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:31:23.0333|INFO |Retrieved Material with courseId = 26
+12-03-2021 22:31:23.0333|INFO |Retrieved skills with courseId = 26
+12-03-2021 22:31:23.0334|INFO |Retrieved feedbacks1 with courseId = 26
+12-03-2021 22:31:23.0405|INFO |Retrieved all previous versions for courseId = 26
+12-03-2021 22:31:28.0696|INFO |Retrieved All Courses
+12-03-2021 22:31:31.0741|INFO |Retrieved skills with courseId = 93
+12-03-2021 22:31:31.0741|INFO |Retrieved Material with courseId = 93
+12-03-2021 22:31:31.0742|INFO |Retrieved feedbacks1 with courseId = 93
+12-03-2021 22:31:31.0743|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:31:34.0543|INFO |Retrieved All Courses
+12-03-2021 22:31:36.0708|INFO |Retrieved feedbacks1 with courseId = 97
+12-03-2021 22:31:36.0708|INFO |Retrieved Material with courseId = 97
+12-03-2021 22:31:36.0708|INFO |Retrieved skills with courseId = 97
+12-03-2021 22:31:36.0710|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:31:36.0763|INFO |Retrieved all previous versions for courseId = 97
+12-03-2021 22:31:44.0361|INFO |Added training material with materialId = 90
+12-03-2021 22:31:45.0071|INFO |Retrieved All Courses
+12-03-2021 22:31:50.0760|INFO |Retrieved skills with courseId = 97
+12-03-2021 22:31:50.0760|INFO |Retrieved Material with courseId = 97
+12-03-2021 22:31:50.0760|INFO |Retrieved feedbacks1 with courseId = 97
+12-03-2021 22:31:50.0760|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:31:50.0814|INFO |Retrieved all previous versions for courseId = 97
+12-03-2021 22:32:47.0756|INFO |Retrieved skills with courseId = 97
+12-03-2021 22:32:47.0757|INFO |Retrieved feedbacks1 with courseId = 97
+12-03-2021 22:32:47.0758|INFO |Retrieved Material with courseId = 97
+12-03-2021 22:32:47.0759|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:32:47.0846|INFO |Retrieved all previous versions for courseId = 97
+12-03-2021 22:32:58.0043|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:32:58.0043|INFO |Retrieved Material with courseId = 97
+12-03-2021 22:32:58.0043|INFO |Retrieved feedbacks1 with courseId = 97
+12-03-2021 22:32:58.0043|INFO |Retrieved skills with courseId = 97
+12-03-2021 22:32:58.0128|INFO |Retrieved all previous versions for courseId = 97
+12-03-2021 22:33:08.0228|INFO |Retrieved count of feedbacks for each course
+12-03-2021 22:33:08.0263|INFO |Retrieved average rating of courses
+12-03-2021 22:33:09.0704|INFO |Retrieved count of feedbacks for each course
+12-03-2021 22:33:09.0721|INFO |Retrieved average rating of courses
+12-03-2021 22:33:19.0964|INFO |Retrieved count of feedbacks for each course
+12-03-2021 22:33:19.0976|INFO |Retrieved average rating of courses
+12-03-2021 22:33:30.0670|INFO |Retrieved count of feedbacks for each course
+12-03-2021 22:33:30.0694|INFO |Retrieved average rating of courses
+12-03-2021 22:34:01.0403|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:34:01.0424|INFO |Added Course with courseid = 0
+12-03-2021 22:34:04.0408|INFO |Retrieved course with highest courseId
+12-03-2021 22:34:04.0447|INFO |Added skill with skillId = 0
+12-03-2021 22:34:07.0506|INFO |Added training material with materialId = 0
+12-03-2021 22:34:07.0510|INFO |Added training material with materialId = 0
+12-03-2021 22:34:07.0537|INFO |Added training material with materialId = 0
+12-03-2021 22:34:11.0438|INFO |Retrieved All Courses
+12-03-2021 22:34:13.0237|INFO |Retrieved skills with courseId = 106
+12-03-2021 22:34:13.0238|INFO |Retrieved feedbacks1 with courseId = 106
+12-03-2021 22:34:13.0238|INFO |Retrieved Material with courseId = 106
+12-03-2021 22:34:13.0238|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:34:13.0292|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:34:13.0292|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:34:13.0294|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:34:23.0020|INFO |Added training material with materialId = -1
+12-03-2021 22:34:26.0409|INFO |Retrieved skills with courseId = 106
+12-03-2021 22:34:26.0410|INFO |Retrieved feedbacks1 with courseId = 106
+12-03-2021 22:34:26.0411|INFO |Retrieved Material with courseId = 106
+12-03-2021 22:34:26.0412|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:34:26.0529|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:34:26.0529|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:34:26.0530|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:34:26.0545|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:34:32.0523|INFO |Retrieved skills with courseId = 106
+12-03-2021 22:34:32.0525|INFO |Retrieved Material with courseId = 106
+12-03-2021 22:34:32.0525|INFO |Retrieved feedbacks1 with courseId = 106
+12-03-2021 22:34:32.0525|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:34:32.0609|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:34:32.0611|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:34:32.0612|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:35:25.0165|INFO |Retrieved Material with courseId = 106
+12-03-2021 22:35:25.0165|INFO |Retrieved feedbacks1 with courseId = 106
+12-03-2021 22:35:25.0165|INFO |Retrieved skills with courseId = 106
+12-03-2021 22:35:25.0166|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:35:25.0250|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:35:25.0252|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:35:25.0254|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:35:40.0301|INFO |Added training material with materialId = -1
+12-03-2021 22:35:41.0107|INFO |Retrieved feedbacks1 with courseId = 106
+12-03-2021 22:35:41.0107|INFO |Retrieved skills with courseId = 106
+12-03-2021 22:35:41.0107|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:35:41.0107|INFO |Retrieved Material with courseId = 106
+12-03-2021 22:35:41.0190|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:35:41.0190|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:35:41.0190|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:35:41.0192|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:03.0105|INFO |Retrieved skills with courseId = 106
+12-03-2021 22:36:03.0109|INFO |Retrieved feedbacks1 with courseId = 106
+12-03-2021 22:36:03.0109|INFO |Retrieved Material with courseId = 106
+12-03-2021 22:36:03.0112|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:36:03.0212|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:03.0212|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:03.0212|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:03.0212|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:05.0750|INFO |Retrieved feedbacks1 with courseId = 106
+12-03-2021 22:36:05.0750|INFO |Retrieved skills with courseId = 106
+12-03-2021 22:36:05.0751|INFO |Retrieved Material with courseId = 106
+12-03-2021 22:36:05.0752|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:36:05.0833|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:05.0834|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:05.0834|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:05.0837|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:14.0308|INFO |Added training material with materialId = 95
+12-03-2021 22:36:15.0278|INFO |Retrieved feedbacks1 with courseId = 106
+12-03-2021 22:36:15.0278|INFO |Retrieved skills with courseId = 106
+12-03-2021 22:36:15.0278|INFO |Retrieved Material with courseId = 106
+12-03-2021 22:36:15.0279|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:36:15.0380|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:15.0380|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:15.0380|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:15.0392|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:33.0445|INFO |Deleted material with materialId = 
+12-03-2021 22:36:33.0560|INFO |Retrieved skills with courseId = 106
+12-03-2021 22:36:33.0560|INFO |Retrieved feedbacks1 with courseId = 106
+12-03-2021 22:36:33.0561|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:36:33.0561|INFO |Retrieved Material with courseId = 106
+12-03-2021 22:36:33.0628|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:33.0628|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:33.0629|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:33.0633|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:35.0038|INFO |Retrieved skills with courseId = 106
+12-03-2021 22:36:35.0038|INFO |Retrieved feedbacks1 with courseId = 106
+12-03-2021 22:36:35.0038|INFO |Retrieved Material with courseId = 106
+12-03-2021 22:36:35.0042|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:36:35.0111|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:35.0111|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:35.0111|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:36.0817|INFO |Retrieved skills with courseId = 106
+12-03-2021 22:36:36.0817|INFO |Retrieved Material with courseId = 106
+12-03-2021 22:36:36.0817|INFO |Retrieved feedbacks1 with courseId = 106
+12-03-2021 22:36:36.0819|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:36:36.0879|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:36.0879|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:37.0843|INFO |Retrieved feedbacks1 with courseId = 106
+12-03-2021 22:36:37.0843|INFO |Retrieved skills with courseId = 106
+12-03-2021 22:36:37.0844|INFO |Retrieved Material with courseId = 106
+12-03-2021 22:36:37.0846|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:36:37.0911|INFO |Retrieved all previous versions for courseId = 106
+12-03-2021 22:36:38.0706|INFO |Retrieved skills with courseId = 106
+12-03-2021 22:36:38.0706|INFO |Retrieved feedbacks1 with courseId = 106
+12-03-2021 22:36:38.0708|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:36:38.0708|INFO |Retrieved Material with courseId = 106
+12-03-2021 22:36:49.0813|INFO |Added feedback with feedbackId = 0
+12-03-2021 22:36:51.0537|INFO |Retrieved All Courses
+12-03-2021 22:36:57.0241|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:36:57.0259|INFO |Retrieved courses uploaded by userId = 3
+12-03-2021 22:36:59.0172|INFO |Deleted Course with courseId = 106
+12-03-2021 22:36:59.0655|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:36:59.0694|INFO |Retrieved courses uploaded by userId = 3
+12-03-2021 22:37:01.0406|INFO |Retrieved count of feedbacks for each course
+12-03-2021 22:37:01.0423|INFO |Retrieved average rating of courses
+12-03-2021 22:37:02.0285|INFO |Retrieved count of feedbacks for each course
+12-03-2021 22:37:02.0298|INFO |Retrieved average rating of courses
+12-03-2021 22:37:08.0335|INFO |Retrieved count of feedbacks for each course
+12-03-2021 22:37:08.0344|INFO |Retrieved average rating of courses
+12-03-2021 22:43:25.0537|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:43:25.0569|INFO |Retrieved courses uploaded by userId = 3
+12-03-2021 22:43:38.0928|INFO |Starting CourseManagementApplication using Java 1.8.0_282 on LAPTOP-V2QGT2TT with PID 11268 (D:\Accolite-Internship\MS-AU Project\backend\target\classes started by gaura in D:\Accolite-Internship\MS-AU Project\backend)
+12-03-2021 22:43:38.0931|INFO |No active profile set, falling back to default profiles: default
+12-03-2021 22:43:41.0859|INFO |Started CourseManagementApplication in 3.431 seconds (JVM running for 4.152)
+12-03-2021 22:43:53.0018|INFO |Edited course with courseId = 97
+12-03-2021 22:43:59.0638|INFO |Retrieved feedbacks1 with courseId = 97
+12-03-2021 22:43:59.0639|INFO |Retrieved skills with courseId = 97
+12-03-2021 22:43:59.0640|INFO |Retrieved Material with courseId = 97
+12-03-2021 22:43:59.0647|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:43:59.0746|INFO |Retrieved all previous versions for courseId = 97
+12-03-2021 22:44:01.0913|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:44:01.0914|INFO |Retrieved feedbacks1 with courseId = 97
+12-03-2021 22:44:01.0918|INFO |Retrieved Material with courseId = 97
+12-03-2021 22:44:01.0919|INFO |Retrieved skills with courseId = 97
+12-03-2021 22:44:01.0997|INFO |Retrieved all previous versions for courseId = 97
+12-03-2021 22:44:03.0824|INFO |Retrieved skills with courseId = 97
+12-03-2021 22:44:03.0825|INFO |Retrieved Material with courseId = 97
+12-03-2021 22:44:03.0825|INFO |Retrieved feedbacks1 with courseId = 97
+12-03-2021 22:44:03.0825|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:44:03.0904|INFO |Retrieved all previous versions for courseId = 97
+12-03-2021 22:44:04.0829|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:44:04.0829|INFO |Retrieved feedbacks1 with courseId = 97
+12-03-2021 22:44:04.0829|INFO |Retrieved skills with courseId = 97
+12-03-2021 22:44:04.0829|INFO |Retrieved Material with courseId = 97
+12-03-2021 22:44:04.0894|INFO |Retrieved all previous versions for courseId = 97
+12-03-2021 22:44:05.0767|INFO |Retrieved skills with courseId = 97
+12-03-2021 22:44:05.0767|INFO |Retrieved feedbacks1 with courseId = 97
+12-03-2021 22:44:05.0768|INFO |Retrieved Material with courseId = 97
+12-03-2021 22:44:05.0768|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:44:05.0826|INFO |Retrieved all previous versions for courseId = 97
+12-03-2021 22:44:06.0773|INFO |Retrieved feedbacks1 with courseId = 97
+12-03-2021 22:44:06.0773|INFO |Retrieved skills with courseId = 97
+12-03-2021 22:44:06.0782|INFO |Retrieved Material with courseId = 97
+12-03-2021 22:44:06.0782|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:44:06.0842|INFO |Retrieved all previous versions for courseId = 97
+12-03-2021 22:44:09.0965|INFO |Deleted material with materialId = 
+12-03-2021 22:44:10.0139|INFO |Retrieved skills with courseId = 97
+12-03-2021 22:44:10.0139|INFO |Retrieved Material with courseId = 97
+12-03-2021 22:44:10.0139|INFO |Retrieved feedbacks1 with courseId = 97
+12-03-2021 22:44:10.0143|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com
+12-03-2021 22:44:10.0233|INFO |Retrieved all previous versions for courseId = 97
+12-03-2021 22:44:12.0958|INFO |Retrieved Material with courseId = 97
+12-03-2021 22:44:12.0958|INFO |Retrieved feedbacks1 with courseId = 97
+12-03-2021 22:44:12.0958|INFO |Retrieved skills with courseId = 97
+12-03-2021 22:44:12.0958|INFO |Retrieved User with email = gaurang.athavale@accolitedigital.com

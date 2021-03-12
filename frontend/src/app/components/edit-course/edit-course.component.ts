@@ -68,6 +68,7 @@ export class EditCourseComponent implements OnInit {
   showDetails(element) {
     console.log(element);
     this.courseService.setViewCourse(element);
+    this.courseService.setCourseLocalStorage(element);
     this.router.navigate(['/viewCourseDetails',element.courseId]);
   }
 

@@ -4,6 +4,8 @@ import com.course.management.dao.TrainingMaterialDao;
 import com.course.management.queries.Queries;
 import com.course.management.models.TrainingMaterial;
 import com.course.management.rowmapper.TrainingMaterialRowMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -17,6 +19,8 @@ import java.util.List;
 @Repository
 public class TrainingMaterialDaoImpl implements TrainingMaterialDao {
 
+    Logger logger= LoggerFactory.getLogger(TrainingMaterialDaoImpl.class);
+
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -28,30 +32,21 @@ public class TrainingMaterialDaoImpl implements TrainingMaterialDao {
             jdbcTemplate.update(Queries.ADD_MATERIAL, trainingMaterial.getCourseId(), trainingMaterial.getFileType(), trainingMaterial.getFileName(), new Date(System.currentTimeMillis()), new Date(System.currentTimeMillis()), file.getBytes(), 0, 1);
         }
         else{
-
-//            TrainingMaterial tm1 = new TrainingMaterial();
             jdbcTemplate.update(Queries.ADD_MATERIAL, trainingMaterial.getCourseId(), trainingMaterial.getFileType(), trainingMaterial.getFileName(), new Date(System.currentTimeMillis()), new Date(System.currentTimeMillis()), file.getBytes(), 0, 1);
-
-//            tm1 = jdbcTemplate.queryForObject(Queries.GET_HIGHEST_MATERIAL_WITH_COURSE_ID, TrainingMaterialRowMapper.TrainingMaterialRowMapperLambda, trainingMaterial.getCourseId());
-            // Update the tm1's parentId and isCurrent
-            // and then add new material
-
-//            jdbcTemplate.update(Queries.ADD_MATERIAL, trainingMaterial.getCourseId(), trainingMaterial.getFileType(), trainingMaterial.getFileName(), new Date(System.currentTimeMillis()), new Date(System.currentTimeMillis()), file.getBytes(), 0, 1);
 
             TrainingMaterial tm = new TrainingMaterial();
             tm = jdbcTemplate.queryForObject(Queries.GET_HIGHEST_MATERIAL_ID, TrainingMaterialRowMapper.TrainingMaterialRowMapperLambda);
 
-
-
             jdbcTemplate.update(Queries.UPDATE_NEW_CHILD, tm.getMaterialId() , 0, trainingMaterial.getMaterialId());
 
         }
-
+        logger.info("Added training material with materialId = " + trainingMaterial.getMaterialId());
         return trainingMaterial;
     }
 
     @Override
     public List<TrainingMaterial> getMaterialByCourseId(int courseId) {
+        logger.info("Retrieved Material with courseId = " + courseId);
         return jdbcTemplate.query(Queries.GET_MATERIAL_BY_COURSE_ID, TrainingMaterialRowMapper.TrainingMaterialRowMapperLambda, courseId);
     }
 
@@ -63,14 +58,9 @@ public class TrainingMaterialDaoImpl implements TrainingMaterialDao {
         List<TrainingMaterial> materials = new ArrayList<TrainingMaterial>();
         TrainingMaterial tm = jdbcTemplate.queryForObject("SELECT * FROM trainingmaterial WHERE course_id = ? AND material_id = ? AND isCurrent = 1", TrainingMaterialRowMapper.TrainingMaterialRowMapperLambda, courseId, materialId);
         int parentId = tm.getParentId();
-//        materials.add(tm);
         do {
-//            System.out.println("Do while");
-//            System.out.println("tm: "+tm.getMaterialId());
-
             try {
                 tm = jdbcTemplate.queryForObject("SELECT * FROM trainingmaterial WHERE course_id = ? AND parent_id = ? AND isCurrent = 0", TrainingMaterialRowMapper.TrainingMaterialRowMapperLambda, courseId, tm.getMaterialId());
-//                System.out.println(tm);
                 materials.add(tm);
                 parentId = tm.getParentId();
             }
@@ -79,11 +69,12 @@ public class TrainingMaterialDaoImpl implements TrainingMaterialDao {
             }
             System.out.println();
         }while (parentId > 0 && tm!=null);
-//        return jdbcTemplate.query(Queries.GET_ALL_PREVIOUS_VERSIONS_BY_COURSE_ID, TrainingMaterialRowMapper.TrainingMaterialRowMapperLambda, courseId);
+        logger.info("Retrieved all previous versions for courseId = " + courseId);
         return materials;
     }
     catch(Exception e){
         System.out.println("Exception");
+        logger.error("Error while retrieving previous versions");
         return new ArrayList<>();
     }
     }
@@ -94,5 +85,6 @@ public class TrainingMaterialDaoImpl implements TrainingMaterialDao {
         jdbcTemplate.update(Queries.DELETE_LATEST_TRAINING_MATERIAL, materialId);
         tm = jdbcTemplate.queryForObject("SELECT * FROM trainingmaterial WHERE parent_id = ?", TrainingMaterialRowMapper.TrainingMaterialRowMapperLambda,materialId);
         jdbcTemplate.update(Queries.UPDATE_NEW_CHILD, 0, 1, tm.getMaterialId());
+        logger.info("Deleted material with materialId = ", materialId);
     }
 }

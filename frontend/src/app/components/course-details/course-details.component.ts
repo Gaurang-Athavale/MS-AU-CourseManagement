@@ -9,6 +9,7 @@ import { User } from 'src/app/Models/User';
 import { CourseService } from 'src/app/services/course.service';
 import { LoginService } from 'src/app/services/login.service';
 import { UploadPopUpComponent } from '../upload-pop-up/upload-pop-up.component';
+import { UploadSingleFilePopupComponent } from '../upload-single-file-popup/upload-single-file-popup.component';
 
 @Component({
   selector: 'app-course-details',
@@ -31,7 +32,9 @@ export class CourseDetailsComponent implements OnInit {
   constructor(private router: Router, private courseService: CourseService, public dialog: MatDialog, private loginService: LoginService) { }
 
   ngOnInit(): void {
-    this.viewCourse = this.courseService.getViewCourse();
+    // this.viewCourse = this.courseService.getViewCourse();
+    this.viewCourse = JSON.parse(this.courseService.getCourseLocalStorage());
+    console.log(this.viewCourse);
     this.courseService.setCourseId(this.viewCourse.courseId);
     console.log(this.viewCourse);
 
@@ -158,7 +161,10 @@ export class CourseDetailsComponent implements OnInit {
     // this.courseService.setEditCourse(course);
   
     dialogRef.afterClosed().subscribe(result => {
+      
       console.log('The dialog was closed');
+      window.location.reload();
+
       // this.courseName = result;
     });
   }
@@ -168,7 +174,25 @@ export class CourseDetailsComponent implements OnInit {
     this.courseService.deleteMaterialFromRemote(materialId).subscribe(
       resp => {console.log("Deleted the material!");}
     );
+    window.location.reload();
+  }
 
+  openDialog1(): void {
+
+    // this.courseService.setMaterialId(materialId);
+    const dialogRef = this.dialog.open(UploadSingleFilePopupComponent, {
+      width: '300px',
+      // data: {materialId: materialId}
+    });
+  
+    // this.courseService.setEditCourse(course);
+  
+    dialogRef.afterClosed().subscribe(result => {
+
+      console.log('The dialog was closed');
+      window.location.reload();
+      // this.courseName = result;
+    });
   }
 
 

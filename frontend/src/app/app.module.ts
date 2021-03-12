@@ -30,6 +30,7 @@ import {MatInputModule} from '@angular/material/input';
 import { UploadPopUpComponent } from './components/upload-pop-up/upload-pop-up.component';
 import { TrendsComponent } from './components/trends/trends.component';
 import { MatSelectModule } from '@angular/material/select';
+import { UploadSingleFilePopupComponent } from './components/upload-single-file-popup/upload-single-file-popup.component';
 
 
 
@@ -47,7 +48,8 @@ import { MatSelectModule } from '@angular/material/select';
     EditPopUpComponent,
     CourseDetailsComponent,
     UploadPopUpComponent,
-    TrendsComponent
+    TrendsComponent,
+    UploadSingleFilePopupComponent
   ],
   imports: [
     BrowserModule,

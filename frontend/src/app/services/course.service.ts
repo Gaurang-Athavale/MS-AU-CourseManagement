@@ -14,6 +14,7 @@ export class CourseService {
   viewCourse: Course;
   courseId: Number;
   materialId: Number;
+  course: Course;
 
   BASE_URL = "http://localhost:8080/";
   ADD_COURSE = "course/addCourse/";
@@ -57,6 +58,16 @@ export class CourseService {
 
   public getViewCourse(){
     return this.viewCourse;
+  }
+
+  public setCourseLocalStorage(course: Course){
+    this.course = course;
+    localStorage.setItem('course', JSON.stringify(course))
+  }
+
+  public getCourseLocalStorage(){
+    // return this.course;
+    return localStorage.getItem('course');
   }
 
   public setCourseId(courseId: Number){
@@ -116,6 +127,19 @@ export class CourseService {
     formData.append('courseId', courseId.toString());
     formData.append('fileName', fileName);
     formData.append('materialId', materialId.toString());
+    return this.http.post(this.BASE_URL + this.ADD_MATERIAL, formData, {responseType: 'text'});
+  }
+
+  public addMaterialfromRemote(materialId: Number, courseId: Number, fileType: string, fileName: string, file: File): Observable<any>{
+    const formData: FormData = new FormData();
+    console.log(courseId);
+    console.log(fileName);
+    formData.append('file', file);
+    formData.append('fileType', fileType);
+    formData.append('courseId', courseId.toString());
+    formData.append('fileName', fileName);
+    formData.append('materialId', materialId.toString());
+
     return this.http.post(this.BASE_URL + this.ADD_MATERIAL, formData, {responseType: 'text'});
   }
 
